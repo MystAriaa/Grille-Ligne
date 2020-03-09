@@ -1,0 +1,82 @@
+﻿  Source.cpp
+E:\Projet\Ligne\Ligne\src\Source.cpp(56,13): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(56,13): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(56,40): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(56,40): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(57,13): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(57,13): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(57,43): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(57,43): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(61,16): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(62,16): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(85,23): warning C4018: '<' : incompatibilité signed/unsigned
+E:\Projet\Ligne\Ligne\src\Source.cpp(91,23): warning C4018: '<' : incompatibilité signed/unsigned
+E:\Projet\Ligne\Ligne\src\Source.cpp(99,23): warning C4018: '<' : incompatibilité signed/unsigned
+E:\Projet\Ligne\Ligne\src\Source.cpp(122,22): warning C4244: 'argument' : conversion de 'float' en 'GLint', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(122,16): warning C4244: 'argument' : conversion de 'float' en 'GLint', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(160,29): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(160,29): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(160,57): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(160,57): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(161,31): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(161,31): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(161,66): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(161,66): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(162,38): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(162,38): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(162,86): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(162,86): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(163,38): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(163,38): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(163,79): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(163,79): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(167,32): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(167,32): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(167,62): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(167,62): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(168,32): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(168,32): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(168,69): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(168,69): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(169,39): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(169,39): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(169,88): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(169,88): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(170,39): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(170,39): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(170,81): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(170,81): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(188,42): warning C4838: la conversion de 'int' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(188,42): warning C4244: 'initialisation' : conversion de 'int' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(188,68): warning C4838: la conversion de 'int' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(188,68): warning C4244: 'initialisation' : conversion de 'int' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(189,42): warning C4838: la conversion de 'int' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(189,42): warning C4244: 'initialisation' : conversion de 'int' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(189,72): warning C4838: la conversion de 'int' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(189,72): warning C4244: 'initialisation' : conversion de 'int' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(190,46): warning C4838: la conversion de 'int' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(190,46): warning C4244: 'initialisation' : conversion de 'int' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(190,91): warning C4838: la conversion de 'int' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(190,91): warning C4244: 'initialisation' : conversion de 'int' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(191,46): warning C4838: la conversion de 'int' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(191,46): warning C4244: 'initialisation' : conversion de 'int' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(191,87): warning C4838: la conversion de 'int' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(191,87): warning C4244: 'initialisation' : conversion de 'int' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(206,27): warning C4018: '<' : incompatibilité signed/unsigned
+E:\Projet\Ligne\Ligne\src\Source.cpp(210,49): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(210,49): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(210,105): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(210,105): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(211,49): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(211,49): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(211,131): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(211,131): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(212,74): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(212,74): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(212,150): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(212,150): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(213,74): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(213,74): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+E:\Projet\Ligne\Ligne\src\Source.cpp(213,125): warning C4838: la conversion de 'double' en 'GLfloat' requiert une conversion restrictive
+E:\Projet\Ligne\Ligne\src\Source.cpp(213,125): warning C4244: 'initialisation' : conversion de 'double' en 'GLfloat', perte possible de données
+  Ligne.vcxproj -> E:\Projet\Ligne\Debug\Ligne.exe
