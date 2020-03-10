@@ -6,8 +6,8 @@
 #include <cmath>
 #include <vector>
 
-#define SCREEN_WIDTH 1276 //multiple de DECOUPAGE_GRILLE + 1
-#define SCREEN_HEIGHT 715
+#define LONGUEUR_FENETRE 1276 //multiple de DECOUPAGE_GRILLE + 1 (plus propre)
+#define HAUTEUR_FENETRE 715
 #define DECOUPAGE_GRILLE 10
 
 //--------------------------------------------------------------------------------------------------------------------------------
@@ -34,30 +34,31 @@ int main(void) //fct principale
     point af, bf; //point a et b que l'on tape
     point ai, bi; //point a et b apres etre arrondi
 
-    std::cout << "Longeur = " << SCREEN_WIDTH << " pixels. \n";
-    std::cout << "Hauteur = " << SCREEN_HEIGHT << " pixels. \n";
+    std::cout << "Longeur de la fenetre = " << LONGUEUR_FENETRE << " pixels. \n";
+    std::cout << "Hauteur de la fenetre = " << HAUTEUR_FENETRE << " pixels. \n";
     std::cout << "La resolution choisie du grillage est de 1 cube pour " << DECOUPAGE_GRILLE << " pixels. \n";
-    std::cout << "L'abscisse est donc bornee a Xmax = " << SCREEN_WIDTH/(DECOUPAGE_GRILLE+1)-SCREEN_WIDTH%(DECOUPAGE_GRILLE+1) << ". \n";
-    std::cout << "L'abscisse est donc bornee a Ymax = " << SCREEN_HEIGHT / (DECOUPAGE_GRILLE + 1) - SCREEN_HEIGHT % (DECOUPAGE_GRILLE + 1) << ". \n";
-    std::cout << "Tapez l'abscisse de A : ";
+    std::cout << "L'abscisse est donc bornee a Xmax = " << LONGUEUR_FENETRE/(DECOUPAGE_GRILLE+1)-LONGUEUR_FENETRE%(DECOUPAGE_GRILLE+1) << ". \n";
+    std::cout << "L'ordonee est donc bornee a Ymax = " << HAUTEUR_FENETRE / (DECOUPAGE_GRILLE + 1) - HAUTEUR_FENETRE % (DECOUPAGE_GRILLE + 1) << ". \n";
+    std::cout << "\n ---------------------------------------- \n";
+    std::cout << "\nTapez l'abscisse de A : ";
     std::cin >> af.x;
-    std::cout << "Tapez l'ordonnée de A : ";
+    std::cout << "Tapez l'ordonnee de A : ";
     std::cin >> af.y;
     std::cout << "Tapez l'abscisse de B : ";
     std::cin >> bf.x;
-    std::cout << "Tapez l'ordonnée de B : ";
+    std::cout << "Tapez l'ordonnee de B : ";
     std::cin >> bf.y;
 
     ai = roundpoint(af); //arrondissement
     bi = roundpoint(bf);
 
-    GLfloat lineVertices[] =
+    GLfloat lineVertices[] = //Ligne original calcule par la librairie
     {
         af.x*(DECOUPAGE_GRILLE+1), af.y* (DECOUPAGE_GRILLE + 1), 0,
         bf.x* (DECOUPAGE_GRILLE + 1), bf.y* (DECOUPAGE_GRILLE + 1), 0
     };
 
-    //CALCUL DU NOMBRE DE CASE A COLORIER
+    //----------------------------CALCUL-DU-NOMBRE-DE-CASE-A-COLORIER--------------------------------------------------------------
     int deltax = abs(bi.x - ai.x) + 1;
     int deltay = abs(bi.y - ai.y) + 1;
     std::vector<point> ListeDesPointsDecouper = {};
@@ -71,28 +72,27 @@ int main(void) //fct principale
     {
         decoupage_ligne = deltay - 1;
     }
-    for (int k = 0; k < decoupage_ligne; k++)
+    for (int k = 0; k < decoupage_ligne; k++) //calcul les points de coupures
     {
         point temp;
         temp.x = (((ai.x + 0.5) * k + (bi.x + 0.5) * (decoupage_ligne - k)) / decoupage_ligne);
         temp.y = (((ai.y + 0.5) * k + (bi.y + 0.5) * (decoupage_ligne - k)) / decoupage_ligne);
         ListeDesPointsDecouper.push_back(temp);
     }
-
-    std::cout << "\n \n \n \n";
-    std::cout << "Debug ListeDesPointsDecouper \n";
-    std::cout << "x" << "  " << "y" << "\n";
-    for (int i = 0; i < ListeDesPointsDecouper.size(); i++)
-    {      
-        std::cout << ListeDesPointsDecouper[i].x << "  " << ListeDesPointsDecouper[i].y;
-        std::cout << "\n";
-    }
-
-    for (int i = 0; i < ListeDesPointsDecouper.size(); i++)
+    for (int i = 0; i < ListeDesPointsDecouper.size(); i++) //on arrondi les points de coupures
     {
         ListeDesPointsDecouperRound.push_back(roundpoint(ListeDesPointsDecouper[i]));
     }
 
+    //-------------------DEBUG-----------------------------------------------------------------------------------------------------
+    std::cout << "\n \n \n \n";
+    std::cout << "Debug ListeDesPointsDecouper \n";
+    std::cout << "x" << "  " << "y" << "\n";
+    for (int i = 0; i < ListeDesPointsDecouper.size(); i++)
+    {
+        std::cout << ListeDesPointsDecouper[i].x << "  " << ListeDesPointsDecouper[i].y;
+        std::cout << "\n";
+    }
     std::cout << "\n \n \n \n";
     std::cout << "Debug ListeDesPointsDecouperRound \n";
     std::cout << "x" << "  " << "y" << "\n";
@@ -101,15 +101,16 @@ int main(void) //fct principale
         std::cout << ListeDesPointsDecouperRound[i].x << "  " << ListeDesPointsDecouperRound[i].y;
         std::cout << "\n";
     }
+    //-------------------DEBUG-END-------------------------------------------------------------------------------------------------
 
 
-    // Initialize the library
+    // Initialise la librairie graphique
     if (!glfwInit())
     {
         return -1;
     }
     // Create a windowed mode window and its OpenGL context
-    window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Grille+Ligne", NULL, NULL);
+    window = glfwCreateWindow(LONGUEUR_FENETRE, HAUTEUR_FENETRE, "Grille+Ligne", NULL, NULL);
     int screenWidth, screenHeight;
     glfwGetFramebufferSize(window, &screenWidth, &screenHeight);
     if (!window)
@@ -122,32 +123,32 @@ int main(void) //fct principale
     glViewport(0.0f, 0.0f, screenWidth, screenHeight); // specifies the part of the window to which OpenGL will draw (in pixels), convert from normalised to pixels
     glMatrixMode(GL_PROJECTION); // projection matrix defines the properties of the camera that views the objects in the world coordinate frame. Here you typically set the zoom factor, aspect ratio and the near and far clipping planes
     glLoadIdentity(); // replace the current matrix with the identity matrix and starts us a fresh because matrix transforms such as glOrpho and glRotate cumulate, basically puts us at (0, 0, 0)
-    glOrtho(0, SCREEN_WIDTH, 0, SCREEN_HEIGHT, 0, 600); // essentially set coordinate system
+    glOrtho(0, LONGUEUR_FENETRE, 0, HAUTEUR_FENETRE, 0, 600); // essentially set coordinate system
     glMatrixMode(GL_MODELVIEW); // (default matrix mode) modelview matrix defines how your objects are transformed (meaning translation, rotation and scaling) in your world
     glLoadIdentity(); // same as above comment
 
-    GLfloat ColourContour[] =
+    GLfloat CouleurContour[] =
     {
         0, 255, 255,
         0, 255, 255,
         0, 255, 255,
         0, 255, 255
     };
-    GLfloat ColourInterieur[] =
+    GLfloat CouleurInterieur[] =
     {
         255, 255, 255,
         255, 255, 255,
         255, 255, 255,
         255, 255, 255
     };
-    GLfloat ColourPoint[] =
+    GLfloat CouleurPoint[] =
     {
         0, 255, 0,
         0, 255, 0,
         0, 255, 0,
         0, 255, 0
     };
-    GLfloat ColourLigne[] =
+    GLfloat CouleurLigne[] =
     {
         255, 0, 0,
         255, 0, 0,
@@ -179,9 +180,9 @@ int main(void) //fct principale
         glEnableClientState(GL_VERTEX_ARRAY);
         glEnableClientState(GL_COLOR_ARRAY);
 
-        for (int i = 0; i < SCREEN_WIDTH; i++)
+        for (int i = 0; i < LONGUEUR_FENETRE; i++) //Creation de la grille blanche + contour
         {
-            for (int j = 0; j < SCREEN_HEIGHT; j++)
+            for (int j = 0; j < HAUTEUR_FENETRE; j++)
             {
                 GLfloat verticesij[] =
                 {
@@ -191,19 +192,19 @@ int main(void) //fct principale
                     i * DECOUPAGE_GRILLE + i + DECOUPAGE_GRILLE, j * DECOUPAGE_GRILLE + j, 0
                 };
                 glVertexPointer(3, GL_FLOAT, 0, verticesij);
-                if (i==0||j==0||i * DECOUPAGE_GRILLE + i + 2* DECOUPAGE_GRILLE > SCREEN_WIDTH ||j * DECOUPAGE_GRILLE + j + 2* DECOUPAGE_GRILLE > SCREEN_HEIGHT)
+                if (i==0||j==0||i * DECOUPAGE_GRILLE + i + 2* DECOUPAGE_GRILLE > LONGUEUR_FENETRE ||j * DECOUPAGE_GRILLE + j + 2* DECOUPAGE_GRILLE > HAUTEUR_FENETRE)
                 {
-                    glColorPointer(3, GL_FLOAT, 0, ColourContour);
+                    glColorPointer(3, GL_FLOAT, 0, CouleurContour);
                 }
                 else
                 {
-                    glColorPointer(3, GL_FLOAT, 0, ColourInterieur);
+                    glColorPointer(3, GL_FLOAT, 0, CouleurInterieur);
                 }
                 glDrawArrays(GL_POLYGON, 0, 4);
             };   
         };
         
-        for (int i = 0; i < ListeDesPointsDecouperRound.size(); i++)
+        for (int i = 0; i < ListeDesPointsDecouperRound.size(); i++) //creation des carrés rouge de la ligne
         {       
             GLfloat verticesLigne[] =
             {
@@ -213,17 +214,18 @@ int main(void) //fct principale
                 ListeDesPointsDecouperRound[i].x* (DECOUPAGE_GRILLE + 1) + DECOUPAGE_GRILLE,ListeDesPointsDecouperRound[i].y* (DECOUPAGE_GRILLE + 1),0
             };
             glVertexPointer(3, GL_FLOAT, 0, verticesLigne);
-            glColorPointer(3, GL_FLOAT, 0, ColourLigne);
+            glColorPointer(3, GL_FLOAT, 0, CouleurLigne);
             glDrawArrays(GL_POLYGON, 0, 4);
         }
-        glVertexPointer(3, GL_FLOAT, 0, PointA);
-        glColorPointer(3, GL_FLOAT, 0, ColourPoint);
+
+        glVertexPointer(3, GL_FLOAT, 0, PointA); //Affichage des extremitées
+        glColorPointer(3, GL_FLOAT, 0, CouleurPoint);
         glDrawArrays(GL_POLYGON, 0, 5);
         glVertexPointer(3, GL_FLOAT, 0, PointB);
-        glColorPointer(3, GL_FLOAT, 0, ColourPoint);
+        glColorPointer(3, GL_FLOAT, 0, CouleurPoint);
         glDrawArrays(GL_POLYGON, 0, 5);
 
-        glColorPointer(3, GL_FLOAT, 0, ColourContour);
+        glColorPointer(3, GL_FLOAT, 0, CouleurContour); //Affichage de la ligne de debug
         glEnable(GL_LINE_SMOOTH);
         glPushAttrib(GL_LINE_BIT);
         glLineWidth(2);
@@ -232,7 +234,7 @@ int main(void) //fct principale
 
 
         glDisableClientState(GL_COLOR_ARRAY);
-        glDisableClientState(GL_VERTEX_ARRAY); // tell OpenGL that you're finished using the vertex array attribute
+        glDisableClientState(GL_VERTEX_ARRAY); 
 
 
 
