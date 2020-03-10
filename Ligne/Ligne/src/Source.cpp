@@ -1,4 +1,4 @@
-#include <GLFW/glfw3.h>
+#include <GLFW/glfw3.h>   //Nb de carree a decoupé = decoupage ligne + 1
 #include <stdlib.h>
 #include <stdio.h>
 #include <iostream>
@@ -54,25 +54,25 @@ int main(void) //fct principale
 
     GLfloat lineVertices[] = //Ligne original calcule par la librairie
     {
-        af.x*(DECOUPAGE_GRILLE+1), af.y* (DECOUPAGE_GRILLE + 1), 0,
-        bf.x* (DECOUPAGE_GRILLE + 1), bf.y* (DECOUPAGE_GRILLE + 1), 0
+        af.x*(DECOUPAGE_GRILLE+1) + 0.5, af.y* (DECOUPAGE_GRILLE + 1) + 0.5, 0,
+        bf.x* (DECOUPAGE_GRILLE + 1) + 0.5, bf.y* (DECOUPAGE_GRILLE + 1) + 0.5, 0
     };
 
     //----------------------------CALCUL-DU-NOMBRE-DE-CASE-A-COLORIER--------------------------------------------------------------
-    int deltax = abs(bi.x - ai.x) + 1;
-    int deltay = abs(bi.y - ai.y) + 1;
+    int deltax = abs(bi.x - ai.x);
+    int deltay = abs(bi.y - ai.y);
     std::vector<point> ListeDesPointsDecouper = {};
     std::vector<point> ListeDesPointsDecouperRound = {};
 
     if (deltax > deltay) //on decoupe en deltax-1 parts sur l'abscisse
     {
-        decoupage_ligne = deltax - 1;       
+        decoupage_ligne = deltax;       
     }
     if (deltax <= deltay) //on decoupe en deltay-1 parts sur l'ordonnée
     {
-        decoupage_ligne = deltay - 1;
+        decoupage_ligne = deltay;
     }
-    for (int k = 0; k < decoupage_ligne; k++) //calcul les points de coupures
+    for (int k = 1; k < decoupage_ligne; k++) //calcul les points de coupures
     {
         point temp;
         temp.x = (((ai.x + 0.5) * k + (bi.x + 0.5) * (decoupage_ligne - k)) / decoupage_ligne);
@@ -158,7 +158,7 @@ int main(void) //fct principale
 
     GLfloat PointA[] =
     {
-        (DECOUPAGE_GRILLE+1)*ai.x,(DECOUPAGE_GRILLE + 1)* ai.y, 0,
+        (DECOUPAGE_GRILLE + 1)* ai.x,(DECOUPAGE_GRILLE + 1)* ai.y, 0,
         (DECOUPAGE_GRILLE + 1)* ai.x,(DECOUPAGE_GRILLE + 1)* ai.y+DECOUPAGE_GRILLE, 0,
         (DECOUPAGE_GRILLE + 1)* ai.x + DECOUPAGE_GRILLE,(DECOUPAGE_GRILLE + 1)* ai.y + DECOUPAGE_GRILLE, 0,
         (DECOUPAGE_GRILLE + 1)* ai.x + DECOUPAGE_GRILLE,(DECOUPAGE_GRILLE + 1)* ai.y, 0     
@@ -209,7 +209,7 @@ int main(void) //fct principale
             GLfloat verticesLigne[] =
             {
                 ListeDesPointsDecouperRound[i].x*(DECOUPAGE_GRILLE + 1),ListeDesPointsDecouperRound[i].y* (DECOUPAGE_GRILLE + 1),0,
-                ListeDesPointsDecouperRound[i].x* (DECOUPAGE_GRILLE + 1),ListeDesPointsDecouperRound[i].y* (DECOUPAGE_GRILLE + 1) +DECOUPAGE_GRILLE,0,
+                ListeDesPointsDecouperRound[i].x* (DECOUPAGE_GRILLE + 1),ListeDesPointsDecouperRound[i].y* (DECOUPAGE_GRILLE + 1) + DECOUPAGE_GRILLE,0,
                 ListeDesPointsDecouperRound[i].x* (DECOUPAGE_GRILLE + 1) + DECOUPAGE_GRILLE,ListeDesPointsDecouperRound[i].y* (DECOUPAGE_GRILLE + 1) + DECOUPAGE_GRILLE,0,
                 ListeDesPointsDecouperRound[i].x* (DECOUPAGE_GRILLE + 1) + DECOUPAGE_GRILLE,ListeDesPointsDecouperRound[i].y* (DECOUPAGE_GRILLE + 1),0
             };
